@@ -1,0 +1,19 @@
+<div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navigation w-nav">
+
+<div class="container-big navbar">
+  <a href="/" aria-current="page" class="brand w-nav-brand w--current">
+    <img src="{{.Site.Params.logo}}" loading="lazy" alt="">
+  </a>
+  <nav role="navigation" class="nav-menu w-nav-menu">
+    {{range .Site.Menus.navmenu}}
+      <a href="{{.URL}}" class="nav-link w-nav-link">{{.Name}}</a>
+    {{end}}
+      <a href="/explore-site/" class="button nav w-button">Explore site</a>
+  </nav>
+  <div class="hamburger w-nav-button">
+      <div class="w-icon-nav-menu"></div>
+  </div>
+</div>
+
+
+</div>

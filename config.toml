@@ -1,0 +1,59 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+defaultContentLanguage = 'en'
+
+##Languages code
+[Languages]
+[languages.en]
+ -baseURL = 'http://localhost:1313/'
+  languageName = 'English'
+  title = 'In English'
+  weight  = 4
+  languagedirection = 'rtl'
+
+[languages.fr]
+ -baseURL = 'http://localhost:1313/fr'
+  languageName = 'Français'
+  title = 'French'
+  weight  = 5
+
+[menu]
+
+[[menu.navmenu]]
+    identifier = "basicinsight"
+    name = "Basic Insight"
+    url = "/basic-insight"
+    weight = "1"
+
+[[menu.navmenu]]
+    identifier = "Analyses"
+    name = "analyses"
+    url = "/analyses"
+    weight = "2"
+
+[[menu.navmenu]]
+    identifier = "blog"
+    name = "blog"
+    url = "/blog"
+    weight = "3"
+
+
+##Taxonomies
+[taxonomies]
+  Tag= 'tags'
+  Category= 'categories'
+  Author = "authors"
+
+## Navigation Menu Configuration
+
+
+
+## Logo Configuration, Favicon, Alt
+[Params]
+logo = "/images/core-cognition-logo.svg"
+alt = "asds"
+url = "/"
+favicon = ""
+blogpostId = "619f99a4cb879275fad566e6"
+dataId = "61996b3541cc105c084a9af1"

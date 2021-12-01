@@ -1,0 +1,99 @@
+{{define "mainContent" }}
+
+  <div class="header">
+    <div class="container-big">
+      <div class="header-content-wrap">
+        {{ $access_headerSection := .Params.HeaderContent}}
+          {{with $access_headerSection}}
+            <h1 class="color-text-white">{{$access_headerSection.Heading}}</h1>
+            <p class="text-subhead color-text-white">{{$access_headerSection.content}}</p>
+              <div class="heading-buttons-wrap">
+                <a href="#" class="button w-button">Explore insight</a>
+                <a href="/#core-cognition" class="info-link w-inline-block">
+               <div>What is core cognition?</div>
+                </a>
+              </div>
+           {{end}}
+      </div>
+    </div>
+   {{partial "homepage/featured-image" .}}
+  </div>
+
+  <!-- What is Core Cognition -->
+  <section id="core-cognition">
+    <div class="page-padding">
+      <div class="container-big">
+        <div class="core-cognition-wrapper">
+          {{ $access_secondSection := .Params.Secondsection}}
+            {{ with $access_secondSection }}
+              <h2 class="semi-bold">{{$access_secondSection.heading}}</h2>
+              <p>{{$access_secondSection.content}}</p>
+            {{end}}
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- the Section basis block -->
+  {{partial "homepage/section_basics" .}}
+
+  <!-- The analyses Block -->
+  {{partial "homepage/section_analyses" .}}
+
+  <section class="section-slide-summary-holder">
+    <div class="page-padding">
+      <div class="container-big">
+        <div>
+          <div data-delay="4000" data-animation="slide" class="slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
+            <div class="w-slider-mask">
+              <div class="slide w-slide">
+                <div>
+                  <div class="center-text">
+                    <h2 class="semi-bold">Being by Doing</h2>
+                  </div><img src="images/cam2.jpg" loading="lazy" sizes="72vw" srcset="images/cam2-p-800.jpeg 800w, images/cam2.jpg 981w" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="slider-arrow left w-slider-arrow-left">
+              <div class="arrow-iconwrap">
+                <div>󰅂</div>
+              </div>
+            </div>
+            <div class="slider-arrow right w-slider-arrow-right">
+              <div class="arrow-iconwrap">
+                <div>󰅁</div>
+              </div>
+            </div>
+            <div class="kill-showing w-slider-nav w-round"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- include the Blog section -->
+  <section>
+    {{range where .Site.Pages "Section" "blog"}} {{.Title}} {{end}}
+    <div class="page-padding">
+      <div class="container-big">
+        <div class="center-text">
+          <h2 class="semi-bold">Blog</h2>
+        </div>
+        <div class="blog-grid-homepage">
+          <div>
+            <div class="featured-blog-image"></div>
+            <h3>Realistic expectations</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae.</p>
+          </div>
+          <div>
+            <div class="featured-blog-image"></div>
+            <h3>Realistic expectations</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{{end}}
